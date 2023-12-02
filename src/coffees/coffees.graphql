@@ -7,4 +7,18 @@ type Coffee {
 
 type Query {
   coffees: [Coffee!]!
+  coffee(id: ID!): Coffee
+}
+
+"""
+Payload for creating a new coffee
+"""
+input CreateCoffeeInput {
+  name: String!
+  brand: String!
+  flavors: [String!]!
+}
+
+type Mutation {
+  createCoffee(createCoffeeInput: CreateCoffeeInput!): Coffee!
 }
