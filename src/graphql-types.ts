@@ -24,6 +24,7 @@ export class Coffee {
     id: number;
     name: string;
     brand: string;
+    createdAt?: Nullable<Date>;
     flavors?: Nullable<Flavor[]>;
 }
 

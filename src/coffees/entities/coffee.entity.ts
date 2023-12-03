@@ -1,5 +1,6 @@
 import {
   Column,
+  CreateDateColumn,
   Entity,
   JoinTable,
   ManyToMany,
@@ -18,6 +19,9 @@ export class Coffee implements GraphQLTypes.Coffee {
 
   @Column()
   brand: string;
+
+  @CreateDateColumn()
+  createdAt?: Date | null;
 
   @JoinTable()
   @ManyToMany(() => Flavor, (flavor) => flavor.coffees, { cascade: true })
