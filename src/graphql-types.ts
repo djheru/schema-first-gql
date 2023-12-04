@@ -72,6 +72,10 @@ export abstract class IMutation {
     removeTea?: Tea;
 }
 
+export abstract class ISubscription {
+    coffeeAdded: Coffee;
+}
+
 export class Tea implements Drink {
     id: number;
     name: string;
