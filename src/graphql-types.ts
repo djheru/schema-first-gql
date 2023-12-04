@@ -50,7 +50,7 @@ export class Flavor {
 export abstract class IQuery {
     coffees: Coffee[];
     coffee?: Coffee;
-    drinks: Drink[];
+    drinks: DrinksResult[];
     teas: Nullable<Tea>[];
     tea?: Nullable<Tea>;
 }
@@ -71,4 +71,5 @@ export class Tea implements Drink {
     createdAt?: Nullable<Date>;
 }
 
+export type DrinksResult = Coffee | Tea;
 type Nullable<T> = T | null;

@@ -3,7 +3,7 @@ import { CoffeesService } from 'src/coffees/coffees.service';
 import * as GraphQLTypes from 'src/graphql-types';
 import { TeasService } from 'src/teas/teas.service';
 
-@Resolver('Drink')
+@Resolver('DrinksResult')
 export class DrinksResolver {
   constructor(
     private readonly coffeesService: CoffeesService,
@@ -18,7 +18,7 @@ export class DrinksResolver {
   }
 
   @ResolveField()
-  __resolveType(value: GraphQLTypes.Drink) {
+  __resolveType(value: GraphQLTypes.DrinksResult) {
     // if ('brand' in value) {
     //   return 'Coffee';
     // }
