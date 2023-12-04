@@ -8,16 +8,23 @@
 /* tslint:disable */
 /* eslint-disable */
 
+export enum CoffeeType {
+    ARABICA = "ARABICA",
+    ROBUSTA = "ROBUSTA"
+}
+
 export class CreateCoffeeInput {
     name: string;
     brand: string;
     flavors: string[];
+    type?: Nullable<CoffeeType>;
 }
 
 export class UpdateCoffeeInput {
     name?: Nullable<string>;
     brand?: Nullable<string>;
     flavors?: Nullable<string[]>;
+    type?: Nullable<CoffeeType>;
 }
 
 export class CreateTeaInput {
@@ -40,6 +47,7 @@ export class Coffee implements Drink {
     brand: string;
     createdAt?: Nullable<Date>;
     flavors?: Nullable<Flavor[]>;
+    type?: Nullable<CoffeeType>;
 }
 
 export class Flavor {

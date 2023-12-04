@@ -26,4 +26,7 @@ export class Coffee implements GraphQLTypes.Coffee {
   @JoinTable()
   @ManyToMany(() => Flavor, (flavor) => flavor.coffees, { cascade: true })
   flavors?: Flavor[];
+
+  @Column({ nullable: true })
+  type?: GraphQLTypes.CoffeeType;
 }
