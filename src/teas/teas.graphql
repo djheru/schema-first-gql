@@ -1,0 +1,27 @@
+type Tea implements Drink {
+  id: ID!
+  name: String!
+  variety: String!
+  createdAt: Date
+}
+
+input CreateTeaInput {
+  name: String!
+  variety: String!
+}
+
+input UpdateTeaInput {
+  name: String
+  variety: String
+}
+
+type Query {
+  teas: [Tea]!
+  tea(id: Int!): Tea
+}
+
+type Mutation {
+  createTea(createTeaInput: CreateTeaInput!): Tea!
+  updateTea(id: ID!, updateTeaInput: UpdateTeaInput!): Tea!
+  removeTea(id: ID!): Tea
+}

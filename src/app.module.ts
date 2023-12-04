@@ -6,6 +6,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CoffeesModule } from './coffees/coffees.module';
 import { DateScalar } from './common/scalars/date.scalar';
+import { DrinksResolver } from './drinks/drinks.resolver';
+import { TeasModule } from './teas/teas.module';
+import { DrinksModule } from './drinks/drinks.module';
 
 @Module({
   imports: [
@@ -24,8 +27,10 @@ import { DateScalar } from './common/scalars/date.scalar';
       typePaths: ['./**/*.graphql'],
     }),
     CoffeesModule,
+    TeasModule,
+    DrinksModule,
   ],
   controllers: [AppController],
-  providers: [AppService, DateScalar],
+  providers: [AppService, DateScalar, DrinksResolver],
 })
 export class AppModule {}
